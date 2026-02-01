@@ -7,7 +7,10 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         Calculator calc = new Calculator();
-        logger.info(String.valueOf(calc.calculate(10, 5, "add")));
+        int result = calc.calculate(10, 5, "add");
+        if (logger.isLoggable(java.util.logging.Level.INFO)) {
+            logger.info("Result: " + result);
+        }
         UserService service = new UserService();
         service.findUser("admin");
         service.deleteUser("admin");

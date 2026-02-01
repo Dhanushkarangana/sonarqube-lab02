@@ -11,7 +11,7 @@ public class UserService {
 
     public void findUser(String username) throws SQLException {
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/db", "root", password);
-                PreparedStatement ps = conn.prepareStatement("SELECT * FROM users WHERE name = ?")) {
+                PreparedStatement ps = conn.prepareStatement("SELECT name FROM users WHERE name = ?")) {
             ps.setString(1, username);
             ps.executeQuery();
         }
