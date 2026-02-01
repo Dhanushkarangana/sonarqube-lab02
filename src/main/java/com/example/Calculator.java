@@ -16,6 +16,7 @@ public class Calculator {
                 }
                 return a / b;
             case "mod":
+
                 return a % b;
             default:
                 throw new IllegalArgumentException("Unknown operation: " + op);
